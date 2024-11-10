@@ -71,6 +71,7 @@ wiki.
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (finder/preview)
 - [neovim LSP](https://neovim.io/doc/user/lsp.html) (picker)
 - [devicons](https://github.com/nvim-tree/nvim-web-devicons) (icons)
+- [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) (smooth scrolling preview)
 
 ### Installation
 

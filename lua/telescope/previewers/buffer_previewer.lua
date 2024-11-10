@@ -5,6 +5,7 @@ local putils = require "telescope.previewers.utils"
 local Previewer = require "telescope.previewers.previewer"
 local conf = require("telescope.config").values
 local global_state = require "telescope.state"
+local has_neoscroll, neoscroll = pcall(require, "neoscroll")
 
 local pscan = require "plenary.scandir"
 
@@ -475,7 +476,11 @@ previewers.new_buffer_previewer = function(opts)
   end
 
   if not opts.scroll_fn then
-    opts.scroll_fn = scroll_fn
+    if has_neoscroll then
+      opts.scroll_fn = neoscroll.telescope_scroll_fn
+    else
+      opts.scroll_fn = scroll_fn
+    end
   end
 
   if not opts.scroll_horizontal_fn then
